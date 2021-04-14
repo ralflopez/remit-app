@@ -3,21 +3,6 @@ const xl = require('excel4node');
 const router = express.Router();
 const pool = require('./db');
 
-router.get('/', async (req, res) => {
-    try {
-        const resp = await pool.query(`CREATE TABLE customers (
-            id BIGSERIAL NOT NULL UNIQUE,
-            PRIMARY KEY (id),
-            name VARCHAR(150) NOT NULL
-        );`)
-        console.log(resp)
-    } catch(err) {
-        console.log(err)
-    }
-
-    console.log(resp);
-});
-
 router.post('/add', async (req, res) => {
     try {
         const { amount, customer_id, description } = req.body; 
