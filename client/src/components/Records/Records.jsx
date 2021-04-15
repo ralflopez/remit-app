@@ -14,7 +14,9 @@ const Records = () => {
         axios.get('/records')
         .then(res => {
             console.log(res)
-            setData(res.data);
+            if(!res.data.err) {
+                setData(res.data);
+            }
         });
     }
 

@@ -1,4 +1,7 @@
 const pg = require('pg');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const pool = new pg.Pool({
     // user: 'czqnoelhsidmlb',
